@@ -6,7 +6,7 @@ class Game : public olc::PixelGameEngine
 public:
 	Game()
 	{
-		sAppName = "Game";
+		sAppName = "Sandbox";
 	}
 private:
 	olc::vi2d worldSize = { 5,6 };
