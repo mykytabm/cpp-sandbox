@@ -51,16 +51,25 @@ public:
 					bool bIsStar = false;
 					int nSeed = y << 16 | x;
 
+					/*
+					* +- fast but does not provide nice distribution
+					*/
 					//----------Standard C++ rand()----------
 					//srand(nSeed);
 					//biIsStar=rand()%256<128;
 					//---------------------------------------
 
+					/*
+					* slow
+					*/
 					//----------std::random----------
 					//mt.seed(nSeed);
 					//bIsStar = dist(mt) < 32;
 					//-------------------------------
 
+					/*
+					* fast like standard rand(), provides results +- like std::random
+					*/
 					//----------Lehmer32----------
 					nLehmer = nSeed;
 					bIsStar = Lehmer32() % 256 < 32;
